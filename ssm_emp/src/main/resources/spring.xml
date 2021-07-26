@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+    <!--开启注解扫描-->
+    <context:component-scan base-package="com.example.service"/>
+    <!--创建数据源-->
+    <bean class="com.alibaba.druid.pool.DruidDataSource" id="dataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://120.77.216.183:3306/ssm?characterEncoding=UTF-8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root123"/>
+    </bean>
+    <!--创建sqlSessionFactory-->
+    <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <!--mapper配置文件位置-->
+        <property name="mapperLocations" value="classpath:com/example/mapper/*.xml"/>
+        <!--实体别名 类名 类名小写-->
+        <property name="typeAliasesPackage" value="com.example.entity"/>
+    </bean>
+    <!--创建Dao-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean"/>
+        <property name="basePackage" value="com.example.dao"/>
+    </bean>
+    <!--创建事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource"  ref="dataSource"/>
+    </bean>
+    <!--开启注解事务生效-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+</beans>

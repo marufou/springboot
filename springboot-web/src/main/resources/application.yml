@@ -1,0 +1,22 @@
+
+#声明注入
+name: 张三
+age: 23
+price: 23.23
+birthday: 2012/12/12 12:12:12  #注意：默认的日期格式为yyyy/mm/dd HH:MM:ss
+sex: true
+
+spring:
+  mvc:
+    servlet:
+      path: /springboot
+    view:
+      prefix: /
+      suffix: .jsp
+#配置jsp试图前缀和后缀
+#配置服务端头
+server:
+  port: 8081
+  servlet:
+    jsp:
+      init-parameters: true #开启jsp页面开发模式 作用：修改jsp页面无需重启springboot应用

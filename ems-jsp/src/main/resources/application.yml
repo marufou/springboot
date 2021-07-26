@@ -1,0 +1,29 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /emp-jsp
+    jsp:
+      init-parameters:
+        development: true #开启jsp模板开发模式
+#配置jsp模板
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://120.77.216.183:3306/ems-jsp?characterEncoding=UTF-8
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root123
+#配置mybatis
+mybatis:
+  type-aliases-package: com.example.entity
+  mapper-locations: classpath:com/example/mapper/*.xml
+
+#配置日志使用
+logging:
+  level:
+    root: info
+    com.example: debug #指定包日志

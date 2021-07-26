@@ -1,0 +1,49 @@
+# k: v kv之间有空格
+# 大小写敏感 使用缩进表示层级关系  缩进不允许使用tab, 只允许空格
+# 缩进的空格数不重要，只要相同层级的元素左对齐即可
+# array list、queue
+# k: [v1,v2,v3]
+# 对象行内写法 k: {k1: v1,k2: v2,k3: v3}
+#private String username;
+#private Boolean boss;
+#private Date birth;
+#private Integer age;
+#private Car car;
+#private String[]  interests;  数组数注入： 小城，小明, xiaozhang
+#private List<String> animal; 12,12,12
+#private Map<String,Object>score; "{'aa':'123','bb': '2344'}"  "{$()}"取值
+#private Set<Double> salarys;
+#private Map<String,List<Pet>> allPets;
+person:
+  username: zhangsan
+  boss: true
+  birth: 2019/12/9
+  age: 18
+  #interests: [篮球,足球]
+  interests:
+    - 篮球
+    - 足球
+    - 排球
+  animal: [阿猫,阿狗]
+  score:
+    english: 80
+    math: 90
+  #score: {english:80,math:90}
+  salarys:
+    -  99999.22
+    -  2828.332
+  pet:
+    name: tom
+    weight: 99.00
+  allPets:
+    sick:
+      - {name: 阿狗, weight: 99.99}
+      - name: 阿猫
+        weight: 88.88
+      - name: 阿忠
+        weight: 77.23
+    health:
+      - name: 阿猫
+        weight: 88.88
+      - name: 阿忠
+        weight: 77.23
