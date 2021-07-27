@@ -1,6 +1,6 @@
 package com.example.service;
 
-import com.example.dao.EmpDao;
+import com.example.mapper.EmpDao;
 import com.example.entity.Emp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

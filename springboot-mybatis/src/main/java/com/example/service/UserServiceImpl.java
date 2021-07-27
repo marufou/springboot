@@ -1,10 +1,8 @@
 package com.example.service;
 
-import com.example.dao.UserDao;
+import com.example.mapper.UserDao;
 import com.example.entity.User;
 import lombok.extern.slf4j.Slf4j;
-import org.mybatis.logging.LoggerFactory;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

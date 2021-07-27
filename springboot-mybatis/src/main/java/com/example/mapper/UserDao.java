@@ -1,4 +1,4 @@
-package com.example.dao;
+package com.example.mapper;
 
 import com.example.entity.User;
 

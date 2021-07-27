@@ -26,7 +26,7 @@
     <!--创建Dao-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean"/>
-        <property name="basePackage" value="com.example.dao"/>
+        <property name="basePackage" value="com.example.mapper"/>
     </bean>
     <!--创建事务管理器-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
