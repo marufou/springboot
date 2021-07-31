@@ -7,7 +7,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver #mysql5.x驱动版本
-    url: jdbc:mysql://120.77.216.183:3306/mybatisplus?characterEncoding=UTF-8
+    url: jdbc:mysql://120.77.216.183:3306/bootssm?characterEncoding=UTF-8
     username: root
     password: root123
 mybatis:

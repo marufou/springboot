@@ -1,0 +1,23 @@
+#配置数据源
+spring:
+  datasource:
+    url: jdbc:mysql://120.77.216.183:3306/mybatisplus?characterEncoding=UTF-8
+    username: root
+    password: root123
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+logging:
+  level:
+    root: info
+    com.example.mapper: trace
+  pattern:
+    console: '%p%m%n'#级别，内容，换行
+#mybatis-plus:
+#  mapper-locations:
+#  - com/example/mapper/*
+#mybatis-plus:
+#  mapper-locations: com/example/mapper/*
+#日志
+#mybatis-plus:
+#  mapper-locations: com/example/mapper/
+

@@ -5,18 +5,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.example.mapper")
-public class SpringBootMybatisplusApplication {
+@MapperScan(basePackages = {"com.example.mapper"})
+public class SpringbootMybtisplus02Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootMybatisplusApplication.class, args);
+        SpringApplication.run(SpringbootMybtisplus02Application.class, args);
     }
 
 }
-/*
-1.建库建表
-2.一如依赖
-3.配置
-4.编码
-5.测试
- */
